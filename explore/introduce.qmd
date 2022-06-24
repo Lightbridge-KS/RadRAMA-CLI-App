@@ -1,0 +1,36 @@
+---
+title: "Introduce Myself"
+format: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+here::i_am("explore/introduce.qmd")
+library(here)
+library(emo)
+library(crayon)
+library(cli)
+```
+
+## Skills
+
+```{r}
+cli::cli_h2("Skills")
+
+cat("My skills involves" , crayon::yellow$bold("writing computer code"), emo::ji("computer"), "\n\n")
+
+cat("I mostly use", crayon::blue$bold("R programming language"), "for:\n")
+
+ul <- cli_ul()
+cli::cli_li("Buiding Software (R package and Web app)")
+cli::cli_li("Data Analysis")
+cli_end(ul)
+
+```
+
+## I also like
+
+```{r}
+cat("I used to like", crayon::yellow$bold("singing"), "a lot, but not much these days.")
+```
+
