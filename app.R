@@ -1,5 +1,6 @@
 library(cli)
 library(emo)
+source("cli/multiply.R")
 source("cli/weather.R")
 
 main <- function() {
