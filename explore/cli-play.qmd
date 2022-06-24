@@ -57,12 +57,10 @@ spin_custom <- function(sp,
 sp_monkey <- make_spinner("monkey", template = "Playing {spin}")
 spin_custom(sp_monkey, 3)
 
-
-
 ```
 
 ```{r}
-spin_custom()
+spin_custom(make_spinner(), total_sec = 5, frame_rate = 2)
 ```
 
 
@@ -74,6 +72,15 @@ fun_with_spinner2 <- function() {
   sp2$finish()
 }
 ansi_with_hidden_cursor(fun_with_spinner2())
+```
+
+```{r}
+cli::list_spinners()
+```
+
+```{r}
+cli::demo_spinners("earth")
+cli::demo_spinners("line")
 ```
 
 
