@@ -1,6 +1,7 @@
-# Introduce Myself in RadRAMA
+# RadRAMA CLI App for Orientation Event
 
-> Introduce my skill using `R`'s CLI for orientation activity at Radio RAMA
+
+> I created this `R`'s CLI App for introduce my skill set in radiology resident orientation at Radio RAMA
 
 
 Steps to reproduce this project
