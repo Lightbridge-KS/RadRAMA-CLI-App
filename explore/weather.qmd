@@ -1,0 +1,42 @@
+---
+title: "weather"
+format: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+here::i_am("explore/weather.qmd")
+library(here)
+library(lubridate)
+source(here("R/openweather.R"))
+```
+
+```{r bkk_weather}
+bkk_weather <- weather_current("bangkok", units = "c")
+```
+
+```{r}
+str(bkk_weather)
+```
+
+```{r}
+# Country & City
+bkk_weather$sys$country #  Country code
+bkk_weather$name # City name
+
+bkk_weather$dt # Unix Date Time
+# BKK Time
+dt <- lubridate::as_datetime(bkk_weather$dt, tz = Sys.timezone())
+format(dt, "%R, %d/%m/%y")
+
+# Temp
+bkk_weather$main$feels_like # Feels Like
+bkk_weather$main$temp_min # Min 
+bkk_weather$main$temp_max # Max
+
+# Humidity
+bkk_weather$main$humidity # %
+
+# Description
+bkk_weather$weather$description
+```

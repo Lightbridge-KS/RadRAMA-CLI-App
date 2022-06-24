@@ -1,0 +1,39 @@
+---
+title: "Open Weather Map (PKG)"
+format: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+here::i_am("explore/openweather.qmd")
+library(here)
+library(dplyr)
+library(ROpenWeatherMap)
+```
+
+## Open Weather API (Package)
+
+You must get API key from [OpenWeather API](https://openweathermap.org/api)
+
+```{r api_key}
+api_key <- Sys.getenv("ROpenWeatherMap_KEY") # from My Project-lv .Renviron
+```
+
+```{r}
+bkk_weather <- get_current_weather(api_key, 
+                                   city = "bangkok")
+```
+
+
+
+
+
+```{r kelvin_to_cel}
+kelvin_to_cel <- function(k) k - 273.15
+```
+
+
+
+
+
+

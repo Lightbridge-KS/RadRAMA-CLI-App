@@ -1,0 +1,80 @@
+---
+title: "Cli Play"
+format: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+here::i_am("explore/cli-play.qmd")
+library(here)
+library(cli)
+```
+
+## Splinners
+
+```{r}
+options(cli.spinner = "hearts")
+```
+
+
+```{r}
+fun <- function() {
+  cli_progress_bar("Spinning")
+  for (i in 1:100) {
+    Sys.sleep(4/100)
+    cli_progress_update()
+  }
+}
+
+fun()
+```
+
+```{r}
+sp1 <- make_spinner()
+
+fun_with_spinner <- function() {
+  lapply(1:100, function(x) { sp1$spin(); Sys.sleep(0.05) })
+  sp1$finish()
+}
+
+fun_with_spinner()
+```
+
+```{r}
+spin_custom <- function(sp,
+                        total_time = 1,
+                        frame = 100
+                        ) {
+  
+  cycle <- total_time / frame
+  lapply(1:frame, function(x) {
+    sp$spin()
+    Sys.sleep(cycle)
+  })
+  sp$finish()
+}
+
+sp_monkey <- make_spinner("monkey", template = "Playing {spin}")
+spin_custom(sp_monkey, 3)
+
+
+
+```
+
+```{r}
+spin_custom()
+```
+
+
+```{r}
+sp2 <- make_spinner(template = "Computing {spin}")
+
+fun_with_spinner2 <- function() {
+  lapply(1:100, function(x) { sp2$spin(); Sys.sleep(0.05) })
+  sp2$finish()
+}
+ansi_with_hidden_cursor(fun_with_spinner2())
+```
+
+
+
