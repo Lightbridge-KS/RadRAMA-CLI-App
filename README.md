@@ -3,6 +3,8 @@
 
 > I created this `R`'s CLI App for introduce my skill set in radiology resident orientation at Radio RAMA
 
+[![asciicast](https://asciinema.org/a/luXRcGVEaQBSn1CB0BUWCMoK5.svg)](https://asciinema.org/a/luXRcGVEaQBSn1CB0BUWCMoK5)
+
 ## Usage
 
 Steps to reproduce this project
