@@ -36,19 +36,19 @@ introduce <- function(first_name = "Kittipos",
    ## Skills
    cli::cli_h2("Skills")
 
-   cat("My skills involves" , crayon::yellow$bold("writing computer code"), emo::ji("computer"), "\n\n")
+   cat("I like to" , crayon::yellow$bold("write computer code"), emo::ji("computer"), "\n\n")
 
    spin_custom(sp_dot, total_sec = 1) # Spin
 
    cat("I mostly use", crayon::blue$bold("R programming language"), "for:\n")
 
-   spin_custom(sp_dot, total_sec = 1) # Spin
+   spin_custom(sp_dot, total_sec = 0.8) # Spin
 
    ul <- cli_ul()
    cli::cli_li("Buiding Software (R package and Web app)")
-   spin_custom(sp_dot, total_sec = 1) # Spin
+   spin_custom(sp_dot, total_sec = 0.8) # Spin
    cli::cli_li("Data Science")
-   spin_custom(sp_dot, total_sec = 1) # Spin
+   spin_custom(sp_dot, total_sec = 0.8) # Spin
    cli::cli_li("Explore fun ideas, like this one 🙂.")
    cli_end(ul)
 

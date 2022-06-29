@@ -8,8 +8,6 @@ source("cli/introduce.R")
 
 # Main App ----------------------------------------------------------------
 
-
-
 runApp <- function() {
 
     # Ask Nick Name for Next Prompt
